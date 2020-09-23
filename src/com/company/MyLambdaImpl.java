@@ -1,8 +1,12 @@
 package com.company;
 
-public class MyLambdaImpl implements Mylambda{
-    @Override
-    public int foo(Integer a, Integer b) {
+public class MyLambdaImpl {
+
+    public int sub(Integer a, Integer b) {
+        return a-b;
+    }
+
+    public static int add(Integer a, Integer b) {
         return a+b;
     }
 }

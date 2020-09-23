@@ -1,9 +1,12 @@
 package com.company;
 
+import java.sql.SQLOutput;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -47,20 +50,49 @@ public class Main {
 
         // Lambda Expression
 
-        // Stream API
+
+
 
         // Dated : 23 Sept
 
         System.out.println("-------------------23 Sep-----------");
         // Functional Interface
-         Integer ta=2,xa=3;
+
          Mylambda Maa =  (p, k) -> p-k;
-         System.out.println(Maa.foo(ta, xa));
+         System.out.println(Maa.foo(2, 3));
 
 
         // Method Referencing
 
-        //Mylambda lambda =
+        Mylambda lambda =  MyLambdaImpl::add;
+        System.out.println(lambda.foo(78,695));
+
+        Mylambda lambdaSub = new MyLambdaImpl()::sub;
+        System.out.println(lambdaSub.foo(100,40));;
+
+
+        // Stream API
+        List<Integer> number = Arrays.asList(2,30,4,5);
+
+        List<Integer>squaredList = number.stream()
+                .map(x -> x*x)
+                .collect(Collectors.toList());
+
+        Integer streamOfSquaredNumber = number.stream()
+                .sorted()
+                .filter(num -> (num%2==0) )
+                .reduce(0,(result,i) -> result+i);
+
+        //System.out.println(streamOfSquaredNumber.collect(Collectors.toList()).toString());
+        System.out.println(streamOfSquaredNumber);
+        System.out.println(squaredList.toString());
+
+
+
+
+
+
+
 
     }
 }
