@@ -49,8 +49,19 @@ public class Main {
 
         // Stream API
 
+        // Dated : 23 Sept
+
+        System.out.println("-------------------23 Sep-----------");
+        // Functional Interface
+         Integer ta=2,xa=3;
+         Mylambda Maa =  (p, k) -> p-k;
+         System.out.println(Maa.foo(ta, xa));
 
 
+        // Method Referencing
+
+        //Mylambda lambda =
 
     }
 }
+
